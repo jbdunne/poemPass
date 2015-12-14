@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>$.passGen() Password Generator jQuery Plugin DEMO</title>
+    <title>Welcome to Poem Pass. Create rock-solid passwords of varying degrees.</title>
 
     <!-- Bootstrap styling -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -12,9 +12,13 @@
   </head>
   <body>
       <div class="container">
-          <h1 class="padding">$.passGen DEMO</h1>
-          <p>Password Generator jQuery Plugin</p>
           <div class="jumbotron bg-primary">
+            <h1 class="text-center">Welcome to Poem Pass.</h1>
+          <p><h2 class="text-center">Create rock-solid passwords of varying degrees. Secure your life.</h2></p>
+      </div>
+      <br>
+          <div class="jumbotron bg-primary">
+            - - - - - - - - - - - -
             <p>Press a button to generate an example password:</p>
             <div class="row">
               <div class="col-md-6">
@@ -33,18 +37,25 @@
                 <p class="padding">
                   <a class="btn btn-default" href="#" role="button">$.passGen({'special' : true})</a>
                 </p>
+                <br>
+                <br>
+                - - - - - - - - - - - -
+                <p>Press a button to generate an example poem:</p>
                 <p class="padding">
-                  <input onclick=generate() type=button value="Generate [ENTER]">
+                  <input class="btn btn-default" onclick=generate() type=button value="Generate">
 <hr>
-<b id="poem-title"></b>
-by <b id="poem-author"></b>
-<hr>
-<div id="poem"></div>
+<b id="poem-author" style="font-size:20px;"></b>
+
                 </p>
+                <br>
+                <br>
                 <p>
+                    - - - - - - - - - - - -
+                  <p>Generate Triplet Passwords</p>
+                  <br>
                   <div id="possibilities"></div>
 Generate
-<select name="count" id="count" onchange="gen.clearResults()">
+<select name="count" id="count" onchange="gen.clearResults()" class="btn btn-default" >
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -57,7 +68,7 @@ Generate
     <option value="10">10</option>
 </select>
 password(s) with
-<select name="length" id="length" onchange="gen.doCalcs()">
+<select name="length" id="length" onchange="gen.doCalcs()" class="btn btn-default" >
     <option value="1">1</option>
     <option value="2" selected="selected">2</option>
     <option value="3">3</option>
@@ -65,12 +76,12 @@ password(s) with
     <option value="5">5</option>
 </select>
 words, separated with
-<select name="sep" id="sep" onchange="gen.doCalcs()">
+<select name="sep" id="sep" onchange="gen.doCalcs()" class="btn btn-default" >
     <option value="0">Numbers, Punctuation &amp; Symbols</option>
     <option value="1">Numbers Only</option>
     <option value="2">Punctuation &amp; Symbols Only</option>
 </select><br>
-<button onclick="gen.makeItHappen()">Do it!</button>
+<button onclick="gen.makeItHappen()" class="btn btn-default" >Do it!</button>
 <div id="results"></div>
 <script src="wordPasswords.js"></script>
 <script>
@@ -121,7 +132,7 @@ words, separated with
     'use strict';
 
 function generate(){
-    var author = generate_lines(1, false, 3);
+    var author = generate_lines(2, false, 3);
     var title = generate_lines(1, false);
 
     document.getElementById('poem-author').innerHTML = author;
@@ -132,7 +143,7 @@ function generate(){
 
 function generate_lines(number_of_lines, line, maximum_words_per_line){
     var block = '';
-    var capitalize = true;
+    var capitalize = false;
     var consonants = 'bcdfghjklmnpqrstvwxyz';
     var lines = '';
     maximum_words_per_line = maximum_words_per_line || 10;
