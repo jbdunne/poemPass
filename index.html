@@ -53,7 +53,8 @@
                     - - - - - - - - - - - -
                   <p>Generate Triplet Passwords:</p>
                   <br>
-                  <div id="possibilities"></div>
+                   <p><div id="possibilities"></div></br>
+                 
 Generate
 <select name="count" id="count" onchange="gen.clearResults()" class="btn btn-default" >
     <option value="1">1</option>
@@ -76,14 +77,20 @@ password(s) with
     <option value="5">5</option>
 </select>
 words, separated with
+<br>
+<br>
 <select name="sep" id="sep" onchange="gen.doCalcs()" class="btn btn-default" >
     <option value="0">Numbers, Punctuation &amp; Symbols</option>
     <option value="1">Numbers Only</option>
     <option value="2">Punctuation &amp; Symbols Only</option>
 </select><br>
+<br>
 <button onclick="gen.makeItHappen()" class="btn btn-default" >Do it!</button>
-<div id="results"></div>
+<br>
+<br>
+<div id="results" style="font-size:20px;font-weight:bold"></div>
 <script src="wordPasswords.js"></script>
+</p>
 <script>
     var gen = new PasswordGenerator();
 </script>
